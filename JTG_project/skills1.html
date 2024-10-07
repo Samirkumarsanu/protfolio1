@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF_8">
+    <meta http_equiv="X_UA_Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device_width, initial_scale=1.0">
+    <title>Skills Section</title>
+    <link rel="stylesheet" href="style1.css">
+</head>
+
+<body>
+    <div class="skills_section">
+        <div class="skills_head">
+            <h2>My <span>Skills</span></h2>
+            <p>Here is my skills to represent my Expertise</p>
+        </div>
+
+        <div class="skills_main">
+            <div class="skill_bar">
+                <div class="info">
+                    <p>HTML</p>
+                    <P>90%</P>
+                </div>
+                <div class="bar">
+                    <span class="html"></span>
+                </div>
+            </div>
+            <div class="skill_bar">
+                <div class="info">
+                    <p>CSS</p>
+                    <P>85%</P>
+                </div>
+                <div class="bar">
+                    <span class="css"></span>
+                </div>
+            </div>
+            <div class="skill_bar">
+                <div class="info">
+                    <p>SASS</p>
+                    <P>80%</P>
+                </div>
+                <div class="bar">
+                    <span class="sass"></span>
+                </div>
+            </div>
+            <div class="skill_bar">
+                <div class="info">
+                    <p>Java Script</p>
+                    <P>80%</P>
+                </div>
+                <div class="bar">
+                    <span class="js"></span>
+                </div>
+            </div>
+            <div class="skill_bar">
+                <div class="info">
+                    <p>React js</p>
+                    <P>75%</P>
+                </div>
+                <div class="bar">
+                    <span class="react"></span>
+                </div>
+            </div>
+            <div class="skill_bar">
+                <div class="info">
+                    <p>Node js</p>
+                    <P>70%</P>
+                </div>
+                <div class="bar">
+                    <span class="node"></span>
+                </div>
+            </div>
+            <div class="skill_bar">
+                <div class="info">
+                    <p>Express js</p>
+                    <P>65%</P>
+                </div>
+                <div class="bar">
+                    <span class="express"></span>
+                </div>
+            </div>
+            <div class="skill_bar">
+                <div class="info">
+                    <p>Mongo DB</p>
+                    <P>60%</P>
+                </div>
+                <div class="bar">
+                    <span class="mongo"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="addskill">
+            <button onclick="showPopup()"
+                style="color: black; background-color: #ff004f; border:none; padding: 10px 25px;border-radius: 4px; margin-top:70px">
+                ADD SKILL
+            </button>
+        </div>
+
+        <!-- Popup HTML -->
+        <div id="popup"
+            style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: white; padding: 20px; border-radius: 8px; box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2); z-index: 1000;">
+            <h3>Add a Skill</h3>
+            <input type="text" id="skillInput" placeholder="Enter skill"
+                style="padding: 8px; width: 80%; margin-bottom: 10px;">
+            <br>
+            <button onclick="addSkill()"
+                style="background-color: #007bff; color: white; border: none; padding: 8px 15px; border-radius: 4px;">Add</button>
+            <button onclick="closePopup()"
+                style="background-color: #ff004f; color: white; border: none; padding: 8px 15px; border-radius: 4px;">Cancel</button>
+        </div>
+
+        <!-- Overlay -->
+        <div id="overlay"
+            style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); z-index: 999;">
+        </div>
+
+        <script>
+            function showPopup() {
+                document.getElementById('popup').style.display = 'block';
+                document.getElementById('overlay').style.display = 'block';
+            }
+
+            function closePopup() {
+                document.getElementById('popup').style.display = 'none';
+                document.getElementById('overlay').style.display = 'none';
+            }
+
+            function addSkill() {
+                const skill = document.getElementById('skillInput').value;
+                if (skill) {
+                    alert('Skill added: ' + skill);
+                    closePopup();
+                } else {
+                    alert('Please enter a skill.');
+                }
+            }
+        </script>
+
+    </div>
+</body>
+
+</html>
